@@ -1,6 +1,7 @@
 # Todo React App
 
-A task management application built with React and Node.js.
+A full-stack **Task Management App** that allows users to register, log in, and manage their tasks securely using **JWT Authentication**.  
+Built with **React**, **Node.js**, and **MongoDB**, demonstrating modern frontend and backend practices.
 
 ## 📸 Demo Screenshots
 
