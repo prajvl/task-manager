@@ -70,4 +70,8 @@ router.post('/login', loginValidation, handleValidationErrors, async (req, res, 
     }
 });
 
+router.get("/",(req,res)=>{
+    res.send("Auth route is working")
+});
+
 module.exports = router;
