@@ -25,10 +25,10 @@ export default function Signup() {
       const { username, password } = data;
       
       // Register the user
-      await axios.post('http://localhost:5000/api/auth/signup', { username, password });
+      await axios.post('https://task-manager-9rcn.onrender.com/api/auth/signup', { username, password });
       
       // Automatically login the user after successful registration
-      const loginResponse = await axios.post('http://localhost:5000/api/auth/login', { username, password });
+      const loginResponse = await axios.post('https://task-manager-9rcn.onrender.com/api/auth/login', { username, password });
       
       // Update Redux store with login data
       dispatch(loginSuccess({
