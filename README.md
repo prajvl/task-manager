@@ -116,136 +116,16 @@ cd client
 npm start
 ```
 
-## API Endpoints
+## 🔐 API Endpoints
 
-Base URL: `http://localhost:5000/api`
+### 🧑‍💻 Authentication
+- **POST** `/api/auth/register` → Register a new user and get JWT token
+- **POST** `/api/auth/login` → Log in and get JWT token
 
-### Authentication
+### 📝 Task Routes
+- **GET** `/api/tasks` → Get all tasks of logged-in user
+- **POST** `/api/tasks` → Create a new task
+- **PUT** `/api/tasks/:id` → Update a specific task
+- **DELETE** `/api/tasks/:id` → Delete a specific task
 
-#### Register
-```http
-POST /auth/register
-Content-Type: application/json
-
-{
-  "username": "string (3-30 characters)",
-  "password": "string (min 6 characters, 1 uppercase, 1 lowercase, 1 number)"
-}
-```
-
-**Response:**
-```json
-{
-  "message": "User registered successfully",
-  "token": "jwt_token_here",
-  "userId": "user_id",
-  "username": "username"
-}
-```
-
-#### Login
-```http
-POST /auth/login
-Content-Type: application/json
-
-{
-  "username": "string",
-  "password": "string"
-}
-```
-
-**Response:**
-```json
-{
-  "message": "Login successful",
-  "token": "jwt_token_here",
-  "userId": "user_id",
-  "username": "username"
-}
-```
-
-### Tasks (Requires Authentication)
-
-Include JWT token: `Authorization: Bearer <token>`
-
-#### Get Tasks
-```http
-GET /tasks
-```
-
-**Response:**
-```json
-[
-  {
-    "_id": "task_id",
-    "title": "Task title",
-    "description": "Task description",
-    "completed": false,
-    "userId": "user_id",
-    "createdAt": "2025-11-28T10:00:00.000Z",
-    "updatedAt": "2025-11-28T10:00:00.000Z"
-  }
-]
-```
-
-#### Create Task
-```http
-POST /tasks
-Content-Type: application/json
-
-{
-  "title": "string (required, 1-100 characters)",
-  "description": "string (optional, max 500 characters)"
-}
-```
-
-**Response:**
-```json
-{
-  "_id": "task_id",
-  "title": "Task title",
-  "description": "Task description",
-  "completed": false,
-  "userId": "user_id",
-  "createdAt": "2025-11-28T10:00:00.000Z",
-  "updatedAt": "2025-11-28T10:00:00.000Z"
-}
-```
-
-#### Update Task
-```http
-PUT /tasks/:id
-Content-Type: application/json
-
-{
-  "title": "string (optional)",
-  "description": "string (optional)",
-  "completed": "boolean (optional)"
-}
-```
-
-**Response:**
-```json
-{
-  "_id": "task_id",
-  "title": "Updated title",
-  "description": "Updated description",
-  "completed": true,
-  "userId": "user_id",
-  "createdAt": "2025-11-28T10:00:00.000Z",
-  "updatedAt": "2025-11-28T10:30:00.000Z"
-}
-```
-
-#### Delete Task
-```http
-DELETE /tasks/:id
-```
-
-**Response:**
-```json
-{
-  "message": "Task deleted successfully"
-}
-```
-
+⚠️ **Note:** All `/api/tasks` routes require a valid JWT in the `authToken` header.
