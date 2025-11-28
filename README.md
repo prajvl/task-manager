@@ -2,6 +2,18 @@
 
 A task management application built with React and Node.js.
 
+## 📸 Demo Screenshots
+
+### Authentication Pages
+| Login Page | Signup Page |
+|:----------:|:-----------:|
+| ![Login Page](screenshots/Login.png) | ![Signup Page](screenshots/Signup.png) |
+
+### Task Management Interface
+| Dashboard | Tasks Management |
+|:---------:|:----------------:|
+| ![Dashboard](screenshots/Dashboard.png) | ![Tasks](screenshots/Tasks.png) |
+
 ## ✨ Features
 
 - 🔐 **Secure Authentication** - JWT-based user registration and login system
