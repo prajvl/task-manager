@@ -17,14 +17,14 @@ Built with **React**, **Node.js**, and **MongoDB**, demonstrating modern fronten
 
 ## ✨ Features
 
-- 🔐 **Secure Authentication** - JWT-based user registration and login system
-- ✅ **Complete Task Management** - Create, read, update, and delete tasks with real-time updates
-- ✏️ **Inline Editing** - Edit tasks directly with form validation
-- ✔️ **Task Status Toggle** - Mark tasks as complete or incomplete instantly
-- 🎨 **Modern UI Design** - Beautiful glassmorphism design with emerald theme
-- 📱 **Fully Responsive** - Mobile-first design that works on all devices
-- 🛡️ **Secure & Protected** - Rate limiting, input validation, and protected routes
-- 🚀 **Real-time Updates** - Instant feedback with loading states and animations
+-  **Secure Authentication** - JWT-based user registration and login system
+-  **Complete Task Management** - Create, read, update, and delete tasks with real-time updates
+-  **Inline Editing** - Edit tasks directly with form validation
+-  **Task Status Toggle** - Mark tasks as complete or incomplete instantly
+-  **Modern UI Design** - Beautiful glassmorphism design with emerald theme
+-  **Fully Responsive** - Mobile-first design that works on all devices
+-  **Secure & Protected** - Rate limiting, input validation, and protected routes
+-  **Real-time Updates** - Instant feedback with loading states and animations
 
 ## 🛠️ Tech Stack
 
