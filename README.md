@@ -3,18 +3,6 @@
 A full-stack **Task Management App** that allows users to register, log in, and manage their tasks securely using **JWT Authentication**.  
 Built with **React**, **Node.js**, and **MongoDB**, demonstrating modern frontend and backend practices.
 
-## 📸 Demo Screenshots
-
-### Authentication Pages
-| Login Page | Signup Page |
-|:----------:|:-----------:|
-| ![Login Page](screenshots/Login.png) | ![Signup Page](screenshots/Signup.png) |
-
-### Task Management Interface
-| Dashboard | Tasks Management |
-|:---------:|:----------------:|
-| ![Dashboard](screenshots/Dashboard.png) | ![Tasks](screenshots/Tasks.png) |
-
 ## ✨ Features
 
 -  **Secure Authentication** - JWT-based user registration and login system
