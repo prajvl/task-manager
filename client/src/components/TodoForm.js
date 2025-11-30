@@ -76,7 +76,7 @@ function TodoForm({ onCreate, onUpdate, editing, onCancel }) {
       </div>
       
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-        {/* Title Input */}
+        
         <div>
           <label htmlFor="title" className="block text-sm font-semibold text-slate-700 mb-2">
             Task Title
@@ -97,7 +97,7 @@ function TodoForm({ onCreate, onUpdate, editing, onCancel }) {
           )}
         </div>
 
-        {/* Status Select - Only show when editing */}
+        
         {editing && (
           <div>
             <label htmlFor="status" className="block text-sm font-semibold text-slate-700 mb-2">
@@ -121,7 +121,7 @@ function TodoForm({ onCreate, onUpdate, editing, onCancel }) {
           </div>
         )}
 
-        {/* Description Input */}
+        
         <div>
           <label htmlFor="description" className="block text-sm font-semibold text-slate-700 mb-2">
             Description
@@ -142,7 +142,7 @@ function TodoForm({ onCreate, onUpdate, editing, onCancel }) {
           )}
         </div>
 
-        {/* Action Buttons */}
+        
         <div className="flex gap-3 pt-2">
           <button
             type="submit"

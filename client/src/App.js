@@ -21,14 +21,14 @@ function TodoApp() {
   useEffect(() => {
     dispatch(fetchTodos());
     
-    // Check for welcome message from signup redirect
+    
     if (location.state?.welcomeMessage) {
       setWelcomeMessage(location.state.welcomeMessage);
-      // Clear the welcome message after 5 seconds
+      
       setTimeout(() => {
         setWelcomeMessage(null);
       }, 5000);
-      // Clear the location state to prevent message from showing again on refresh
+      
       navigate(location.pathname, { replace: true });
     }
   }, [dispatch, location.state, navigate, location.pathname]);
@@ -60,7 +60,7 @@ function TodoApp() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-green-50 font-sans">
-      {/* Header */}
+      
       <div className="relative">
         <div className="absolute inset-0 bg-gradient-to-r from-primary-500/10 to-blue-500/10 backdrop-blur-xl"></div>
         <div className="relative flex justify-between items-center w-full px-6 py-4 border-b border-white/20">
@@ -97,9 +97,9 @@ function TodoApp() {
         </div>
       </div>
 
-      {/* Main Content */}
+      
       <div className="flex flex-col items-center px-6 py-8 space-y-8">
-        {/* Welcome Message */}
+        
         {welcomeMessage && (
           <div className="w-full max-w-4xl bg-primary-50/80 backdrop-blur-md border border-primary-200 text-primary-800 rounded-2xl p-4 flex items-center gap-3 shadow-soft animate-pulse">
             <svg className="w-5 h-5 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -109,7 +109,7 @@ function TodoApp() {
           </div>
         )}
 
-        {/* Error Alert */}
+        
         {error && (
           <div className="w-full max-w-4xl bg-red-50/80 backdrop-blur-md border border-red-200 text-red-800 rounded-2xl p-4 flex items-center gap-3 shadow-soft">
             <svg className="w-5 h-5 text-red-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -119,7 +119,7 @@ function TodoApp() {
           </div>
         )}
 
-        {/* Todo Form Card */}
+        
         <div className="w-full max-w-4xl bg-white/70 backdrop-blur-md rounded-3xl border border-white/20 shadow-soft p-8">
           <TodoForm
             onCreate={createTodo}
@@ -129,7 +129,7 @@ function TodoApp() {
           />
         </div>
 
-        {/* Todo List Card */}
+        
         <div className="w-full max-w-4xl bg-white/70 backdrop-blur-md rounded-3xl border border-white/20 shadow-soft p-8">
           {loading ? (
             <div className="flex flex-col justify-center items-center py-12">

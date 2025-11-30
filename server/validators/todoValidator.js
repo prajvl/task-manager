@@ -1,19 +1,18 @@
 const { body, validationResult } = require('express-validator');
 
-// Validation rules for creating a todo
 const createTodoValidation = [
   body('title')
     .trim()
     .isLength({ min: 1, max: 100 })
     .withMessage('Title is required and must be at most 100 characters')
-    .escape(), // Sanitize HTML
+    .escape(),
   
   body('description')
     .optional()
     .trim()
     .isLength({ max: 500 })
     .withMessage('Description must be at most 500 characters')
-    .escape(), // Sanitize HTML
+    .escape(),
   
   body('status')
     .optional()
@@ -22,7 +21,6 @@ const createTodoValidation = [
     .default('pending')
 ];
 
-// Validation rules for updating a todo
 const updateTodoValidation = [
   body('title')
     .optional()
@@ -49,7 +47,6 @@ const updateTodoValidation = [
     .withMessage('Completed must be a boolean value')
 ];
 
-// Middleware to handle validation errors
 const handleValidationErrors = (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {

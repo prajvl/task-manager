@@ -18,13 +18,13 @@ function TodoItem({ todo, onToggle, onEdit, onDelete }) {
         ? 'bg-green-50/50 border-green-200/60 hover:bg-green-50' 
         : 'bg-white border-slate-200 hover:bg-slate-50/50'
     }`}>
-      {/* Status indicator line */}
+      
       <div className={`absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl ${
         isCompleted ? 'bg-green-500' : 'bg-amber-500'
       }`}></div>
 
       <div className="flex items-start gap-4">
-        {/* Checkbox */}
+        
         <button
           onClick={handleStatusToggle}
           className={`relative flex-shrink-0 w-6 h-6 rounded-lg border-2 transition-all duration-200 ${
@@ -40,7 +40,7 @@ function TodoItem({ todo, onToggle, onEdit, onDelete }) {
           )}
         </button>
 
-        {/* Content */}
+        
         <div className="flex-1 min-w-0">
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1">
@@ -57,7 +57,7 @@ function TodoItem({ todo, onToggle, onEdit, onDelete }) {
                 </p>
               )}
               <div className="flex items-center gap-3 mt-3">
-                {/* Status Badge */}
+                
                 <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium ${
                   isCompleted
                     ? 'bg-green-100 text-green-700 border border-green-200'
@@ -66,7 +66,7 @@ function TodoItem({ todo, onToggle, onEdit, onDelete }) {
                   {isCompleted ? '✅' : '📋'}
                   {isCompleted ? 'Completed' : 'Pending'}
                 </span>
-                {/* Created date */}
+                
                 <span className="text-xs text-slate-400">
                   {new Date(todo.createdAt || Date.now()).toLocaleDateString('en-US', {
                     month: 'short',
@@ -76,7 +76,7 @@ function TodoItem({ todo, onToggle, onEdit, onDelete }) {
               </div>
             </div>
 
-            {/* Action buttons */}
+            
             <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
               <button
                 onClick={() => onEdit(todo)}

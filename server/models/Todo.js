@@ -9,7 +9,7 @@ const todoSchema = new mongoose.Schema({
         enum: ['pending', 'completed'], 
         default: 'pending' 
     },
-    completed: { type: Boolean, default: false }, // Keep for backward compatibility
+    completed: { type: Boolean, default: false },
     createdAt: { type: Date, default: Date.now }
 });
 

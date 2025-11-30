@@ -5,7 +5,6 @@ const { createTodoValidation, updateTodoValidation, handleValidationErrors } = r
 
 const router = express.Router();
 
-// Get all tasks for logged in user
 router.get('/', auth, async (req, res, next) => {
     try {
         const tasks = await Todo.find({ user: req.user }).sort({ createdAt: -1 });
@@ -19,7 +18,6 @@ router.get('/', auth, async (req, res, next) => {
     }
 });
 
-// Add a new task
 router.post('/', auth, createTodoValidation, handleValidationErrors, async (req, res, next) => {
     try {
         const { title, description, status = 'pending' } = req.body;
@@ -40,12 +38,10 @@ router.post('/', auth, createTodoValidation, handleValidationErrors, async (req,
     }
 });
 
-// Update task
 router.put('/:id', auth, updateTodoValidation, handleValidationErrors, async (req, res, next) => {
     try {
         const { title, description, status, completed } = req.body;
         
-        // Handle backward compatibility: if completed is set, update status accordingly
         let finalStatus = status;
         if (completed !== undefined && !status) {
             finalStatus = completed ? 'completed' : 'pending';

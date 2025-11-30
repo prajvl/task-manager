@@ -1,6 +1,5 @@
 const { body, validationResult } = require('express-validator');
 
-// Validation rules for user signup
 const signupValidation = [
   body('username')
     .trim()
@@ -17,7 +16,6 @@ const signupValidation = [
     .withMessage('Password must contain at least one uppercase letter, one lowercase letter, and one number')
 ];
 
-// Validation rules for user login
 const loginValidation = [
   body('username')
     .trim()
@@ -30,7 +28,6 @@ const loginValidation = [
     .withMessage('Password must be between 6 and 50 characters')
 ];
 
-// Middleware to handle validation errors
 const handleValidationErrors = (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {

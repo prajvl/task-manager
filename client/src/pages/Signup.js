@@ -21,22 +21,22 @@ export default function Signup() {
 
   const onSubmit = async (data) => {
     try {
-      // Only send username and password to backend
+      
       const { username, password } = data;
       
-      // Register the user
+      
       await axios.post('http://localhost:5000/api/auth/signup', { username, password });
       
-      // Automatically login the user after successful registration
+      
       const loginResponse = await axios.post('http://localhost:5000/api/auth/login', { username, password });
       
-      // Update Redux store with login data
+      
       dispatch(loginSuccess({
         token: loginResponse.data.token,
         username: loginResponse.data.username
       }));
       
-      // Redirect to tasks with welcome message
+      
       navigate('/tasks', { 
         state: { 
           welcomeMessage: `Welcome to Task Manager, ${username}! Start organizing your tasks.` 
@@ -52,7 +52,7 @@ export default function Signup() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-green-50 font-sans flex items-center justify-center p-6">
       <div className="w-full max-w-md">
-        {/* Header */}
+        
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl shadow-card mb-4">
             <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -78,7 +78,7 @@ export default function Signup() {
           )}
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-            {/* Username Field */}
+            
             <div>
               <label className="block text-slate-700 text-sm font-semibold mb-2">Username</label>
               <input
@@ -97,7 +97,7 @@ export default function Signup() {
               )}
             </div>
 
-            {/* Password Field */}
+            
             <div>
               <label className="block text-slate-700 text-sm font-semibold mb-2">Password</label>
               <input
@@ -116,7 +116,7 @@ export default function Signup() {
               )}
             </div>
 
-            {/* Confirm Password Field */}
+            
             <div>
               <label className="block text-slate-700 text-sm font-semibold mb-2">Confirm Password</label>
               <input
@@ -135,7 +135,7 @@ export default function Signup() {
               )}
             </div>
 
-            {/* Submit Button */}
+            
             <button
               type="submit"
               disabled={isSubmitting}
@@ -160,7 +160,7 @@ export default function Signup() {
             </button>
           </form>
 
-          {/* Sign In Link */}
+          
           <div className="text-center mt-6 pt-6 border-t border-slate-200">
             <p className="text-slate-600 mb-3">
               Already have an account?

@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import API from '../services/api';
 
-// Async thunks for API calls
+ 
 export const fetchTodos = createAsyncThunk(
   'todos/fetchTodos',
   async (_, { getState, rejectWithValue }) => {
@@ -78,7 +78,7 @@ const todosSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      // Fetch todos
+      
       .addCase(fetchTodos.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -91,7 +91,7 @@ const todosSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      // Create todo
+      
       .addCase(createTodo.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -105,7 +105,7 @@ const todosSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      // Update todo
+      
       .addCase(updateTodo.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -121,7 +121,7 @@ const todosSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      // Delete todo
+      
       .addCase(deleteTodo.pending, (state) => {
         state.loading = true;
         state.error = null;

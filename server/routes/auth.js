@@ -6,7 +6,6 @@ const { signupValidation, loginValidation, handleValidationErrors } = require('.
 const router = express.Router();
 const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret_here';
 
-// Signup
 router.post('/signup', signupValidation, handleValidationErrors, async (req, res, next) => {
     try {
         const { username, password } = req.body;
@@ -32,7 +31,6 @@ router.post('/signup', signupValidation, handleValidationErrors, async (req, res
     }
 });
 
-// Login
 router.post('/login', loginValidation, handleValidationErrors, async (req, res, next) => {
     try {
         const { username, password } = req.body;

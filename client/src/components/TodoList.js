@@ -21,7 +21,7 @@ function TodoList({ todos, onToggle, onEdit, onDelete }) {
 
   return (
     <div className="space-y-8">
-      {/* Header with stats */}
+      
       <div className="flex items-center justify-between">
         <div>
           <h3 className="text-lg font-semibold text-slate-800">Your Tasks</h3>
@@ -41,7 +41,7 @@ function TodoList({ todos, onToggle, onEdit, onDelete }) {
         </div>
       </div>
 
-      {/* Pending Tasks */}
+      
       {pendingTodos.length > 0 && (
         <div className="space-y-3">
           <h4 className="text-sm font-semibold text-slate-600 uppercase tracking-wide flex items-center gap-2">
@@ -62,7 +62,7 @@ function TodoList({ todos, onToggle, onEdit, onDelete }) {
         </div>
       )}
 
-      {/* Completed Tasks */}
+      
       {completedTodos.length > 0 && (
         <div className="space-y-3">
           <h4 className="text-sm font-semibold text-slate-600 uppercase tracking-wide flex items-center gap-2">
